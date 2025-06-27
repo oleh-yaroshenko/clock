@@ -19,3 +19,15 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock();
+
+const markContainer = document.querySelector(".second-marks");
+
+for (let i = 0; i < 60; i++) {
+    const mark = document.createElement("div");
+    mark.classList.add("mark");
+
+    const angle = (i / 60) * 360;
+    mark.style.transform = `rotate(${angle}deg) translateY(-145px)`; // Adjust this value for placement
+
+    markContainer.appendChild(mark);
+}
